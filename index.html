@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник путешествий</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="header-top">
+        <span class="header-label">TRAVEL DIARY</span>
+        <span class="header-year">2026</span>
+    </div>
+</header>
+
+<main>
+
+    <section class="section">
+        <h2>Мои поездки</h2>
+        <div id="trips" class="trips"></div>
+    </section>
+
+
+    <section class="section">
+        <h2>Добавить поездку</h2>
+
+        <form id="tripForm">
+
+            <label for="country">Страна</label>
+            <input type="text" id="country" placeholder="Например, Италия">
+
+
+            <label for="city">Город</label>
+            <input type="text" id="city" placeholder="Например, Рим">
+
+
+            <div class="date-row">
+
+                <div>
+                    <label for="startDate">Дата начала</label>
+                    <input
+                        type="text"
+                        id="startDate"
+                        class="date-input"
+                        placeholder="ДД.ММ.ГГГГ"
+                        maxlength="10"
+                        inputmode="numeric"
+                    >
+                </div>
+
+                <div>
+                    <label for="endDate">Дата окончания</label>
+                    <input
+                        type="text"
+                        id="endDate"
+                        class="date-input"
+                        placeholder="ДД.ММ.ГГГГ"
+                        maxlength="10"
+                        inputmode="numeric"
+                    >
+                </div>
+
+            </div>
+
+
+            <label>Фотографии</label>
+
+            <p class="form-hint">
+                Вставьте ссылку на фотографию.
+            </p>
+
+            <div class="photo-add-row">
+
+                <input
+                    type="url"
+                    id="photoUrl"
+                    placeholder="https://example.com/photo.jpg"
+                >
+
+                <button type="button" id="addPhoto">
+                    Добавить фото
+                </button>
+
+            </div>
+
+            <div id="photoPreview" class="photo-preview"></div>
+
+
+            <label for="impressions">Впечатления</label>
+
+            <textarea
+                id="impressions"
+                placeholder="Напишите свои впечатления..."
+            ></textarea>
+
+
+            <p id="error"></p>
+
+            <button type="submit" class="main-button">
+                Добавить поездку
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <section class="section">
+
+        <h2>Подробнее о поездке</h2>
+
+        <div id="tripDetails">
+
+            <p class="empty-text">
+                Выберите поездку, чтобы посмотреть подробную информацию.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <h2>Моя статистика</h2>
+
+        <div class="statistics">
+
+            <div class="stat">
+                <strong id="tripCount">0</strong>
+                <span>поездок</span>
+            </div>
+
+            <div class="stat">
+                <strong id="countryCount">0</strong>
+                <span>стран</span>
+            </div>
+
+            <div class="stat">
+                <strong id="cityCount">0</strong>
+                <span>городов</span>
+            </div>
+
+            <div class="stat">
+                <strong id="photoCount">0</strong>
+                <span>фотографий</span>
+            </div>
+
+        </div>
+
+
+        <h3>Посещённые страны</h3>
+
+        <div id="countriesList"></div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
